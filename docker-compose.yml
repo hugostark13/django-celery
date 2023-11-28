@@ -39,7 +39,7 @@ services:
     container_name: celery1
     build:
       context: ./dcelery
-    #command: celery --app=dcelery worker -l INFO -Q celery,celery:1,celery:2,celery:3,celery:4  
+#command: celery --app=dcelery worker -l INFO -Q celery,celery:1,celery:2,celery:3,celery:4  
     command: celery --app=dcelery worker -l INFO -Q tasks,dead_letter -E -B
     volumes:
       - ./dcelery:/usr/src/app/
@@ -52,7 +52,7 @@ services:
       - django
       - rabbitmq
   
-  #check website status, not related to django
+#check website status, not related to django
   celery2:
     container_name: celery2
     build:

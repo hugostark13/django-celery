@@ -1,5 +1,6 @@
-from celery import shared_task, group
 import time
+
+from celery import group, shared_task
 from django.core.management import call_command
 
 
@@ -7,42 +8,22 @@ from django.core.management import call_command
 def management_command():
     call_command("test_command")
 
-
 # @shared_task
-# def task1():
-#     return
-
-
-# @shared_task
-# def task2():
-#     return
-
-
-# @shared_task(task_rate_limit="10/m")
-# def tp1(queue="celery"):
+# def tp1(queue='celery'):
 #     time.sleep(3)
 #     return
 
-
 # @shared_task
-# def tp1(queue="celery:1"):
+# def tp2(queue='celery:1'):
 #     time.sleep(3)
 #     return
 
-
 # @shared_task
-# def tp2(queue="celery:2"):
+# def tp3(queue='celery:2'):
 #     time.sleep(3)
 #     return
 
-
 # @shared_task
-# def tp3(queue="celery:3"):
-#     time.sleep(3)
-#     return
-
-
-# @shared_task
-# def tp4(queue="celery:4"):
+# def tp4(queue='celery:3'):
 #     time.sleep(3)
 #     return
